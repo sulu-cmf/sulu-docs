@@ -424,6 +424,13 @@ have already been added by bundles registered previously.
 After that an empty list should appear on ``/admin/#/events``. But if you add some data to the ``event`` table it
 should be listed:
 
+A debug command can be used to check whether your view has been created correctly. ``sulu:debug:admin:view``
+
+.. code-block:: bash
+
+    $ bin/adminconsole sulu:debug:admin:view | grep event
+      app.events_list     sulu_admin.list   /events
+
 .. figure:: ../img/extend-admin-list.jpg
 
 Configure navigation
