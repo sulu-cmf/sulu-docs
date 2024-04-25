@@ -421,8 +421,14 @@ Finally the ``View`` object has to be added to the ``ViewCollection``, which is 
 ``configureViews`` method. This has been implemented like this to allow other bundles to further manipulate views that
 have already been added by bundles registered previously.
 
-After that an empty list should appear on ``/admin/#/events``. But if you add some data to the ``event`` table it
-should be listed:
+The debug command can be used to check whether your view has been created correctly. ``sulu:admin:debug-view``
+
+.. code-block:: bash
+
+    $ bin/adminconsole sulu:admin:debug-view | grep event
+      app.events_list     sulu_admin.list   /events
+
+After that, an empty list should appear on ﻿``/admin/#/events``. Once you add data to the `﻿event` table, the list will populate with the new information:
 
 .. figure:: ../img/extend-admin-list.jpg
 
