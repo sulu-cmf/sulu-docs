@@ -295,7 +295,8 @@ as well, then you should be able to see these actions when using the ``debug:rou
 
 .. note::
 
-    To expose routes also to the admin frontend, you must use the `FOSJsRoutingBundle`_ and set the ``methods`` parameter for the actions.
+    To expose routes also to the admin frontend, you must use the `FOSJsRoutingBundle`_ and set the ``methods`` and the ``expose``
+    parameter for the actions.
 
     For example: ``options: ['expose' => true], methods: ['POST']``. Further examples of exposed routes, can be found in the
     `Sulu Workshops`_, specifically assignment 10.
