@@ -269,6 +269,20 @@ as well, then you should be able to see these actions when using the ``debug:rou
       app.put_event      PUT      ANY      ANY    /admin/api/events/{id}.{_format}
       app.delete_event   DELETE   ANY      ANY    /admin/api/events/{id}.{_format}
 
+.. note::
+
+    To expose routes also to the admin frontend, you must use the `FOSJsRoutingBundle`_ and set the ``methods`` and the ``expose``
+    parameter for the actions.
+
+    For example: ``options: ['expose' => true], methods: ['POST']``. Further examples of exposed routes, can be found in the
+    `Sulu Workshops`_, specifically assignment 10.
+
+    Sulu automatically exposes actions with names that match the regex pattern ``(.+\.)?c?get_.*``.
+
+    If you want to verify the active rules for exposing routes, you can use the command ``bin/console debug:config fos_js_routing``.
+
+    To confirm that your route is correctly registered, use the command ``bin/console fos:js-routing:debug``.
+
 These routes are spread over two different URLs, one without the ID (``/admin/api/events``) and one with the ID
 (``/admin/api/events/{id}``). The first one is used to get a list of available events and to create new events, while
 the latter is about already existing events.
@@ -847,3 +861,5 @@ the parent then the ``/config/forms/event_details.xml`` would look like this:
 .. _Sulu workshop: https://github.com/sulu/sulu-workshop
 .. _Sulu Demo repository: https://github.com/sulu/sulu-demo/pulls?q=is%3Aopen+is%3Apr+label%3AExample
 .. _Sulu Javascript Docs: https://jsdocs.sulu.io/
+.. _FOSJsRoutingBundle: https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/blob/master/Resources/doc/usage.rst
+.. _Sulu Workshops: https://github.com/sulu/sulu-workshop/pulls

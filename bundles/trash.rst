@@ -74,6 +74,12 @@ in time.
         }
     }
 
+.. Tip::
+
+    If you're using the default `services.yaml configuration from Symfony`_, the example should work as is.
+    However, if you've created a custom ``TrashItemHandler`` in a separate bundle, be sure to tag the service with
+    ``sulu_trash.store_trash_item_handler`` to ensure proper functionality.
+
 Restore an entity from a trash item
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -117,6 +123,13 @@ with the correct data.
         }
     }
 
+.. Tip::
+
+    If you're using the default `services.yaml configuration from Symfony`_, the example should work as is.
+    However, if you've created a custom ``TrashItemHandler`` in a separate bundle, be sure to tag the service with
+    ``sulu_trash.restore_trash_item_handler`` to ensure proper functionality.
+
+
 (Optional) Add restore configuration for your entity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -158,6 +171,12 @@ previous steps to implement the ``RestoreConfigurationProviderInterface`` and re
         }
     }
 
+.. Tip::
+
+    If you're using the default `services.yaml configuration from Symfony`_, the example should work as is.
+    However, if you've created a custom ``TrashItemHandler`` with the restore functionality in a separate bundle,
+    be sure to tag the service also with ``sulu_trash.restore_configuration_provider`` to ensure proper functionality.
+
 The ``RestoreConfiguration`` class allows to set the following configuration properties.
 All configuration properties are optional an can be set to ``null``.
 
@@ -195,6 +214,12 @@ This extension point allows to clean up external data when a trash item is remov
 cannot be restored anymore. For example, this can be used to clean up associated files on the hard
 drive or related data in an external system.
 
+.. Tip::
+
+    If you're using the default `services.yaml configuration from Symfony`_, the example should work as is.
+    However, if you've created a custom ``TrashItemHandler`` with the restore functionality in a separate bundle,
+    be sure to tag the service also with ``sulu_trash.remove_trash_item_handler`` to ensure proper functionality.
+
 .. _TrashItem entity: https://github.com/sulu/sulu/blob/2.x/src/Sulu/Bundle/TrashBundle/Domain/Model/TrashItem.php
 .. _TrashManager service: https://github.com/sulu/sulu/blob/2.x/src/Sulu/Bundle/TrashBundle/Application/TrashManager/TrashManager.php
 .. _StoreTrashItemHandlerInterface interface: https://github.com/sulu/sulu/blob/2.x/src/Sulu/Bundle/TrashBundle/Application/TrashItemHandler/StoreTrashItemHandlerInterface.php
@@ -202,3 +227,4 @@ drive or related data in an external system.
 .. _RemoveTrashItemHandlerInterface interface: https://github.com/sulu/sulu/blob/2.x/src/Sulu/Bundle/TrashBundle/Application/TrashItemHandler/RemoveTrashItemHandlerInterface.php
 .. _RestoreConfiguration object: https://github.com/sulu/sulu/blob/2.x/src/Sulu/Bundle/TrashBundle/Application/RestoreConfigurationProvider/RestoreConfiguration.php
 .. _RestoreConfigurationProviderInterface interface: https://github.com/sulu/sulu/blob/2.x/src/Sulu/Bundle/TrashBundle/Application/RestoreConfigurationProvider/RestoreConfigurationProviderInterface.php
+.. _services.yaml configuration from Symfony: https://symfony.com/doc/6.4/service_container.html#service-container-services-load-example

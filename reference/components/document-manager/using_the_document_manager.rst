@@ -62,6 +62,14 @@ on which subscribers you have registered.
 
 See the :doc:`subscribers` chapter for more information.
 
+.. note::
+
+    Be aware that documents can only be created in the admin context, not in the website context. For CLI commands, this means you must use ﻿``bin/adminconsole`` to execute the command. Alternatively, you can execute a command that dispatches messages via the Symfony Messenger. In this case, the consumer that consumes the dispatched message must also run in the admin context.
+
+    .. code-block:: bash
+
+        bin/adminconsole your:command
+
 The Path Builder
 ----------------
 
