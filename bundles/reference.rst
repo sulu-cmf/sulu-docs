@@ -7,6 +7,11 @@ and location in which an entity is utilized. Presently, the ReferenceBundle is c
 Media within PHPCR entities such as `pages` and `snippets`. These references are managed distinctly for the draft
 state within the `admin context` and the live state within the `website context`.
 
+The main reason we need this bundle is that, unlike traditional database references, our content management system
+operates on an unstructured data model. Therefore, we cannot rely solely on database references, which are usually preferred.
+It is essential to note that the ReferenceBundle should only be used for unstructured data, where database relations are
+not feasible.
+
 |
 
 Content maintainers are able to see the references to a specific entity in the `Insights` tab of an entity like `Snippet`.
