@@ -295,8 +295,17 @@ as well, then you should be able to see these actions when using the ``debug:rou
 
 .. note::
 
-    Routes to this actions must be exposed using `FOSJsRoutingBundle`_, and also they must have set ``methods``
-    parameter (e.g. ``options: ['expose' => true], methods: ['GET']``). Examples can be found at `Sulu Workshops`_, specificly in assignment 10.
+    To expose routes also to the admin frontend, you must use the `FOSJsRoutingBundle`_ and set the ``methods`` parameter for the actions.
+
+    For example: ``options: ['expose' => true], methods: ['POST']``. Further examples of exposed routes, can be found in the
+    `Sulu Workshops`_, specifically assignment 10.
+
+    Sulu automatically exposes actions with names that match the regex pattern ``(.+\.)?c?get_.*``.
+
+    If you want to verify the active rules for exposing routes, you can use the command ``bin/console debug:config fos_js_routing``.
+
+    To confirm that your route is correctly registered, use the command ``bin/console fos:js-routing:debug``.
+
 
 
 These routes are spread over two different URLs, one without the ID (``/admin/api/events``) and one with the ID
