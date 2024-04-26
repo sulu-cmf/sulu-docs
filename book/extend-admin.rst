@@ -307,8 +307,6 @@ as well, then you should be able to see these actions when using the ``debug:rou
 
     To confirm that your route is correctly registered, use the command ``bin/console fos:js-routing:debug``.
 
-
-
 These routes are spread over two different URLs, one without the ID (``/admin/api/events``) and one with the ID
 (``/admin/api/events/{id}``). The first one is used to get a list of available events and to create new events, while
 the latter is about already existing events.
