@@ -1,12 +1,14 @@
 Cleanup PHPCR database
 ======================
 
-When you have an older installation of Sulu, you might have many old PHPCR properties in your database. Especially if
-you have changed you templates or content types a lot. To clean up the database you can use the following command:
+If you have an older installation of Sulu, you may be dealing with a database cluttered with outdated PHPCR properties.
+This is particularly common if you’ve made significant changes to your templates or content types over time.
+To tidy up your database, try running the following command:
 
 .. code-block:: bash
 
-    php bin/console sulu:phpcr:cleanup
+    php bin/console sulu:document:phpcr-cleanup
 
-The command is quite powerfull but also risky to run it in production. It will remove all properties which are not used
-in the current templates. So make sure to have a backup of your database before running this command.
+The command is quite powerful, but exercise caution when deploying it in a production environment. 
+It will remove all properties not currently utilized in your templates. To avoid potential pitfalls, ensure you have a 
+backup of your database in place before executing this command.
