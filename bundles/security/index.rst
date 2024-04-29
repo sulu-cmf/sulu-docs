@@ -106,7 +106,7 @@ the object type and id are also passed the permissions of the security contexts
 from the role might be overridden by the permissions from this specific object
 (which are handled by the previously mentioned ``AccessControlManager``).
 
-Single-Sign-On  Authentication
+Single-Sign-On Authentication
 ------------------------------
 
 Sulu supports authentication via Single-Sign-On (SSO).
@@ -144,12 +144,13 @@ This can be configured in the ``config/packages/security.yaml``:
 After adjusting the configuration and clearing the symfony cache,
 you only see the ``username or email`` field when you try to login to the administration interface.
 When the user email matches the configured domain,
-the user is then redirected to the SSO provider to authenticate and after successful authentication,
-the user is redirected back to the administration interface.
+the user is then redirected to the SSO provider to authenticate. After successful authentication, the system redirects the user back to the administration interface.
 If the domain does not match the configured domain, the user is authenticated using the standard login form.
 On password reset, when the domain matches, the user is also redirected to the SSO provider.
 
-Note: At the moment, only the OpenID protocol is supported for Single-Sign-On authentication in Sulu.
+.. note::
+
+    At the moment, only the OpenID protocol is supported for Single-Sign-On authentication in Sulu.
 
 Two-Factor Authentication
 -------------------------
