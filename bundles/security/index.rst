@@ -139,7 +139,7 @@ This can be configured in the ``config/packages/security.yaml``:
    +        providers:
    +            'sulu.io':
    +                dsn: 'openid://%env(resolve:SULU_OPEN_ID_CLIENT_ID)%:%env(resolve:SULU_OPEN_ID_CLIENT_SECRET)%@%env(resolve:SULU_OPEN_ID_ENDPOINT)%'
-   +                user_role: 'USER'
+   +                default_role_key: 'USER'
 
 After adjusting the configuration and clearing the symfony cache,
 you only see the ``username or email`` field when you try to login to the administration interface.
