@@ -97,7 +97,8 @@ For the `User` entity (`se_users`):
 .. note::
 
    Symfony keeps the user object in the session, clearing the sessions is so sometimes required
-   when running into ``php.CRITICAL: Uncaught Error: Failed opening required /var/project/var/cache/website/prod/doctrine/orm/Proxies/__CG__SuluBundleSecurityBundleEntityUser.php``
+   when running into ``php.CRITICAL: Uncaught Error: Failed opening required /var/project/var/cache/website/prod/doctrine/orm/Proxies/__CG__SuluBundleSecurityBundleEntityUser.php``.  
+   If use the native session storage you can use ``(php -i && php bin/console debug:config framework session) | grep save_path`` to get the configured save paths of sessions.
 
 For the `Role` entity (`se_roles`):
 
