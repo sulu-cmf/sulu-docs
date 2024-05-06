@@ -138,6 +138,7 @@ This can be configured in the ``config/packages/security.yaml``:
    +    single_sign_on:
    +        providers:
    +            'sulu.io':
+   +                domain: 'sulu.io'
    +                dsn: 'openid://%env(resolve:SULU_OPEN_ID_CLIENT_ID)%:%env(resolve:SULU_OPEN_ID_CLIENT_SECRET)%@%env(resolve:SULU_OPEN_ID_ENDPOINT)%'
    +                default_role_key: 'USER'
 
@@ -151,6 +152,9 @@ On password reset, when the domain matches, the user is also redirected to the S
 .. note::
 
     At the moment, only the OpenID protocol is supported for Single-Sign-On authentication in Sulu.
+
+.. note::
+    The 'domain' key within the configuration is optional. However, it's recommended to specify the 'domain' key if your domain contains characters that may undergo normalization processes. For example, 'my-example.com' could become 'my_example.com' during normalization. Specifying the 'domain' key helps to avoid such issues.
 
 Two-Factor Authentication
 -------------------------
