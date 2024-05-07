@@ -947,8 +947,9 @@ node and the ``ref`` attribute:
 
 .. note::
 
-    Mixing global and local block types is supported but it is recommended to keep your block type names unique,
-    to avoid confusion and change to global blocks in future easier without data migration.
+    Mixing global and local block types is supported, but it is recommended to keep your block type names unique
+    to avoid confusion. This approach also simplifies the transition to global blocks in the future, eliminating the need
+    for data migrations.
 
 Caching
 -------
