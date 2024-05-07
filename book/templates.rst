@@ -382,7 +382,7 @@ from within a block.
 
 .. note::
 
-    Because the ``&`` character needs to be escaped inside of XML files, you have to use ``AND`` instead of ``&&`` 
+    Because the ``&`` character needs to be escaped inside of XML files, you have to use ``AND`` instead of ``&&``
     if you want to connect conditions using a logical and. Additionally, you can use ``OR`` instead of ``||``.
 
 Language Independent Properties
@@ -942,22 +942,13 @@ node and the ``ref`` attribute:
     <block name="blocks" default-type="text_block" minOccurs="0">
         <types>
             <type ref="text_block" />
-            <type name="editor">
-                <meta>
-                    <title lang="en">Editor</title>
-                    <title lang="de">Editor</title>
-                </meta>
-                <properties>
-                    <property name="text_editor" type="text_editor">
-                        <meta>
-                            <title lang="en">Text Editor</title>
-                            <title lang="de">Texteditor</title>
-                        </meta>
-                    </property>
-                </properties>
-            </type>
         </types>
     </block>
+
+.. note::
+
+    Mixing global and local block types is supported but it is recommended to keep your block type names unique,
+    to avoid confusion and change to global blocks in future easier without data migration.
 
 Caching
 -------
