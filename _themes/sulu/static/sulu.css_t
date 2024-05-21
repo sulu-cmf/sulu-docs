@@ -310,19 +310,6 @@ div.sphinxsidebar #searchbox input[type="submit"] {
 }
 
 /* Basics */
-h1, h2, h3, h4, h5, h6, ul, ol, p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.section > * {
-    margin-top: 16px;
-}
-
-
-.section > *:first-child {
-    margin-top: 0;
-}
 
 ul {
     padding-left: 1.25em;
@@ -376,9 +363,15 @@ h6 {
 }
 
 /* Figure */
-div.figure {
-    margin: 0;
-    padding: 0;
+.align-default,
+img.align-default,
+figure.align-default,
+table.align-default {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    text-align: left;
 }
 
 /* Img */
@@ -402,10 +395,6 @@ object.align-right {
 table {
     width: 100%;
     max-width: 75ch;
-}
-
-table.align-default {
-    margin-left: 0;
 }
 
 .sphinxsidebar code,
