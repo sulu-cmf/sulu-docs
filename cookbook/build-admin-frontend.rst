@@ -31,7 +31,7 @@ Solution 2: Build manually with docker
 
 .. code-block:: bash
 
-    docker run --rm --interactive --tty --volume ${PWD}:/var/project node:14.16.0 /bin/bash
+    docker run --rm --interactive --tty --volume ${PWD}:/var/project node:20-alpine3.18 /bin/sh
 
     # for completion: using another node version is possible by adjusting the tag of the node image
     # docker run --rm --interactive --tty --volume ${PWD}:/var/project node:12.21.0 /bin/bash
