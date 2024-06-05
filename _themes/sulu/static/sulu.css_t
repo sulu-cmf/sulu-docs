@@ -380,15 +380,17 @@ img {
 }
 
 img.align-center,
-.figure.align-center,
+figure.align-center,
 object.align-center,
 img.align-right,
-.figure.align-right,
+figure.align-right,
 object.align-right {
     max-width: 75ch;
     /* not centered */
     margin-left: 0;
     margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Table */
