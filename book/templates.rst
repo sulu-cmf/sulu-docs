@@ -40,12 +40,6 @@ The template of a page can be selected in the admin interface:
 
 .. figure:: ../img/templates-selection.png
 
-.. Caution::
-
-    A template is shown in the dropdown only if both the XML and the Twig file
-    exist! If you can't see your template, double-check the directories
-    ``config/templates/pages`` and ``templates/pages``.
-
 The name displayed in the dropdown is configured in the ``<meta>`` section of
 the XML:
 
