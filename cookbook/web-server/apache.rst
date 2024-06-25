@@ -60,6 +60,7 @@ Let's add the Apache configuration file for the `sulu.lo` domain.
               ExpiresByType image/svg "access plus 1 year"
               ExpiresByType image/jpeg "access plus 1 year"
               ExpiresByType image/jpg "access plus 1 year"
+              ExpiresByType image/avif "access plus 1 year"
               ExpiresByType image/webp "access plus 1 year"
               ExpiresByType image/x-icon "access plus 1 year"
               ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
@@ -74,7 +75,7 @@ Let's add the Apache configuration file for the `sulu.lo` domain.
           </IfModule>
 
           <IfModule mod_headers.c>
-              <filesMatch ".(ico|css|js|gif|webp|jpe?g|png|svg|woff|woff2|eot|ttf|mp4)$">
+              <filesMatch ".(ico|css|js|gif|webp|avif|jpe?g|png|svg|woff|woff2|eot|ttf|mp4)$">
                   Header set Cache-Control "public, max-age=31536000, immutable"
               </filesMatch>
 

@@ -23,12 +23,12 @@ Refresh references
 ------------------
 
 The references are automatically updated upon saving an entity. You also have the option to manually update the
-references by executing the `bin/console sulu:references:refresh` command. This command optionally accepts the
+references by executing the `bin/console sulu:reference:refresh` command. This command optionally accepts the
 <resource-key> argument. When this argument is provided, only the references for the specified resource key will be refreshed.
 
 .. code-block:: bash
 
-    bin/console sulu:references:refresh <resource-key>
+    bin/console sulu:reference:refresh <resource-key>
 
 .. note::
 
