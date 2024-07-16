@@ -195,7 +195,7 @@ To extend the admin view by adding a activities table, follow these steps:
 	1.	Inject the `ActivityViewBuilderFactoryInterface`: Inject this interface into your custom Admin class. This will allow you to utilize the necessary methods to create the activities view.
 	2.	Create the Activity List View: Use the `createActivityListViewBuilder` method to create the list view for the activities table.
 
-Here’s an example implementation from the `SnippetAdmin` class, demonstrating how to add the activities tab to your custom admin view:
+Here’s an example implementation, demonstrating how to add the activities tab to your custom admin view, for further examples take a look at the SnippetAdmin class:
 
 .. code-block:: php
 
@@ -205,7 +205,7 @@ Here’s an example implementation from the `SnippetAdmin` class, demonstrating 
                 ->createActivityListViewBuilder(
                     $insightsResourceTabViewName . '.activity',
                     '/activities',
-                    SnippetDocument::RESOURCE_KEY
+                    CustomEntity::RESOURCE_KEY
                 )
                 ->setParent($insightsResourceTabViewName)
         );
