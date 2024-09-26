@@ -59,3 +59,36 @@ Example implementation for a custom content-type:
                 $propertyPrefix . $property->getName()
             );
     }
+
+Extending the Admin View with a References Table
+------------------------------------------------
+
+To extend the admin view by adding a references table, follow these steps:
+
+	1.	Inject the `ReferenceViewBuilderFactoryInterface`: Inject this interface into your custom Admin class. This will allow you to utilize the necessary methods to create the references view.
+	2.	Create the Reference List View: Use the `createReferenceListViewBuilder` method to create the list view for the references table.
+
+Here’s an example implementation from the `SnippetAdmin` class, demonstrating how to add the references tab to your custom admin view:
+
+.. code-block:: php
+
+    if ($this->referenceViewBuilderFactory->hasReferenceListPermission()) {
+        $viewCollection->add(
+            $this->referenceViewBuilderFactory
+                ->createReferenceListViewBuilder(
+                    $insightsResourceTabViewName . '.reference',
+                    '/references',
+                    SnippetDocument::RESOURCE_KEY
+                )
+                ->setParent($insightsResourceTabViewName)
+        );
+    }
+
+The `hasReferenceListPermission` method ensures that the current user has permission to view the references list.
+The `createReferenceListViewBuilder` method is used to create the view. It takes three parameters:
+
+    - The name of the new view, usually appended with .reference to indicate it is a reference view.
+    - The URL path for the references table.
+    - The resource key identifies the type of resource being referenced.
+
+The setParent method sets the parent view to integrate the references table into the existing admin view.
