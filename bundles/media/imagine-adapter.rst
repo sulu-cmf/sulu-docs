@@ -77,7 +77,6 @@ To install it use following commands:
 .. code-block:: bash
 
     apt-get install libvips-dev
-    pecl install vips
     composer require rokka/imagine-vips
 
 .. _gd: http://php.net/manual/en/book.image.php
