@@ -13,7 +13,8 @@ Available adapters are:
 .. note::
 
     You may require to install on your operation system ``libjpeg-dev``, ``libpng-dev``, ``libwebp-dev``, ``libavif-dev``, ...
-    or other libraries to support the range of image mime types you want to support.
+    or other libraries to support the range of image mime types you want to support. Linux distributions like
+    Alpine may are not shipping them in the base image.
 
 GD
 --
