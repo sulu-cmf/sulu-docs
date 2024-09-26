@@ -10,6 +10,11 @@ Available adapters are:
 * `imagick_extension`_
 * `vips_extension`_
 
+.. note::
+
+    You may require to install on your operation system ``libjpeg-dev``, ``libpng-dev``, ``libwebp-dev``, ``libavif-dev``, ...
+    or other libraries to support the range of image mime types you want to support.
+
 GD
 --
 
@@ -18,6 +23,7 @@ The simplest adapter is GD and it has no external dependencies besides the PHP e
 **Docker:**
 
 To use the GD extension, you need to install it with docker-php-ext-install. However, GD requires Linux libraries to function properly. Depending on the type of file you want to generate (such as JPG, PNG, or WebP), you also need to install the corresponding libraries.
+
 ..code-block:: bash
 
     RUN apt-get update && apt-get install -y \
@@ -27,7 +33,6 @@ To use the GD extension, you need to install it with docker-php-ext-install. How
         libpng-dev \
         && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
         && docker-php-ext-install -j$(nproc) gd \
-
 
 Imagick
 -------
@@ -47,8 +52,8 @@ To install it use following commands:
 
 .. code-block:: bash
 
-    apt-get install libmagickwand-dev inkscape
-    pecl install imagick
+    apt-get install libmagickwand-dev
+    apt-get install php8.3-imagick
 
 VIPS
 ----
