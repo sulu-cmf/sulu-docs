@@ -21,7 +21,7 @@ To make working with configuration files easier Symfony Config provides some han
    bin/adminconsole config:dump-reference sulu_website --format xml
 
    # Debugging the configuration
-   bin/adminconsole debug:config: sulu_website
+   bin/adminconsole debug:config sulu_website
 
 .. note::
     All of the webspace definition files are located under `config/webspaces` and the default format is XML.
