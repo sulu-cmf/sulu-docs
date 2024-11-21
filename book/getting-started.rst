@@ -49,7 +49,7 @@ This command will bootstrap a new project in the directory ``my-project``.
 
     .. code-block:: bash
 
-        bin/console sulu:admin:download-language
+        php bin/console sulu:admin:download-language
 
 Webspaces
 ---------
@@ -125,7 +125,7 @@ default data:
 
 .. code-block:: bash
 
-    bin/adminconsole sulu:build dev
+    php bin/adminconsole sulu:build dev
 
 .. caution::
 
@@ -134,7 +134,7 @@ default data:
 
     .. code-block:: bash
 
-        bin/adminconsole sulu:build prod
+        php bin/adminconsole sulu:build prod
 
 Optionally, you can store the content of your website (all tables starting with
 ``phpcr_``) in `Apache Jackrabbit`_. We'll get back to that later.
