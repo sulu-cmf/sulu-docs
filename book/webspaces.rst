@@ -91,7 +91,7 @@ following paragraphs.
                     </environment>
                     <environment type="dev">
                         <urls>
-                            <url language="en">website.lo</url>
+                            <url language="en">example.localhost</url>
                         </urls>
                     </environment>
                 </environments>
