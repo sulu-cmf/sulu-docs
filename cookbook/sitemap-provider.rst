@@ -74,7 +74,7 @@ implemented in the Repository.
 
         public function getMaxPage($scheme, $host)
         {
-            if ($host !== 'example.org') {
+            if ($host !== 'website.org') {
                 // If the pages are only for a specific
                 return 0;
             }

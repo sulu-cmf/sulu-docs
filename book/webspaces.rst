@@ -24,11 +24,11 @@ following paragraphs.
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://schemas.sulu.io/webspace/webspace http://schemas.sulu.io/webspace/webspace-1.1.xsd">
 
-        <name>Example</name>
-        <key>example</key>
+        <name>Website</name>
+        <key>website</key>
 
         <security permission-check="true">
-            <system>example</system>
+            <system>website</system>
         </security>
 
         <localizations>
@@ -36,7 +36,7 @@ following paragraphs.
         </localizations>
 
         <default-templates>
-            <default-template type="page">example</default-template>
+            <default-template type="page">default</default-template>
             <default-template type="homepage">default</default-template>
         </default-templates>
 
@@ -80,18 +80,18 @@ following paragraphs.
 
         <portals>
             <portal>
-                <name>example</name>
-                <key>example</key>
+                <name>Website</name>
+                <key>website</key>
 
                 <environments>
                     <environment type="prod">
                         <urls>
-                            <url language="en">example.org</url>
+                            <url language="en">website.org</url>
                         </urls>
                     </environment>
                     <environment type="dev">
                         <urls>
-                            <url language="en">example.lo</url>
+                            <url language="en">website.lo</url>
                         </urls>
                     </environment>
                 </environments>
@@ -270,7 +270,7 @@ localization. The following fragment shows again how to this:
 
 .. code-block:: xml
 
-    <url language="de" country="at">www.example.org</url>
+    <url language="de" country="at">www.website.org</url>
 
 Since it is possible to define localizations without a country, this attribute
 is also optional here. However, the combination of language and country here
@@ -284,13 +284,13 @@ following line for an example:
 
 .. code-block:: xml
 
-    <url>www.example.org/{localization}</url>
+    <url>www.website.org/{localization}</url>
 
 Placeholder are expressions in curly braces, which will be expanded to every
 possible value. For the above example that means, that an URL for every
 localization defined will be generated. So if you have a localization ``de-at``
-and ``en-us``, the system will create URLs for ``www.example.org/de-at`` and
-``www.example.org/en-us``.
+and ``en-us``, the system will create URLs for ``www.website.org/de-at`` and
+``www.website.org/en-us``.
 
 In the following table all the possible placeholders are listed, and explains
 the values of them by using the ``de-at``-localization:
