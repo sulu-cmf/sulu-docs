@@ -31,7 +31,7 @@ Have a look at the official Symfony Documentation about
     # config/packages/framework.yaml
     framework:
         router:
-            default_uri: 'https://website.org'
+            default_uri: 'https://example.org'
 
 .. tip::
 
@@ -46,7 +46,7 @@ If you are using a Symfony version before 5.1, you need to configure the
     # config/services.yaml
     parameters:
         router.request_context.scheme: 'https'
-        router.request_context.host: 'website.org'
+        router.request_context.host: 'example.org'
 
 Switch back to on the fly generation
 ------------------------------------
