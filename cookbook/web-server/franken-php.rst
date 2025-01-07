@@ -10,13 +10,17 @@ However after running through those steps you need to modify the setup a slight 
 
 The modifications
 -----------------
+
 .. note::
+
     Beware these instructions might get out of date if FrankenPHP Documentation changes.
 
 After installing you should have a `Dockerfile` which is the base for all containers.
 
 There should be a section under like this:
+
 .. code-block:: dockerfile
+
     # Base FrankenPHP image
     ...
     RUN set -eux; \
@@ -35,6 +39,7 @@ Secondly we also need to add a database. We can just do that by adding it to the
 Here is an example configuration for mysql:
 
 .. code-block:: yaml
+
        services:
           # ....
           database:
@@ -56,7 +61,9 @@ After setting up the container you might also want to update the `DATABASE_URL` 
 If you have some other modifications in your set up be sure to copy all changes of the `docker-compose*` files to the `compose.yaml` and `compose.override.yaml`.
 
 After all this, the Sulu default configuration is not used anymore and can be removed:
+
 .. code-block:: bash
+
     rm docker-compose.yaml
     rm docker-compose.override.yaml
 
