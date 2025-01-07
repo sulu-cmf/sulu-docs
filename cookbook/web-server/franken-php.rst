@@ -1,5 +1,5 @@
-Running Franken PHP
-===================
+FrankenPHP via Docker
+=====================
 
 To add FrankenPHP to an existing project you can follow these steps: `FrankenPHP Documentation`_.
 
