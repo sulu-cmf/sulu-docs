@@ -384,6 +384,12 @@ from within a block.
     Because the ``&`` character needs to be escaped inside of XML files, you have to use ``AND`` instead of ``&&``
     if you want to connect conditions using a logical and. Additionally, you can use ``OR`` instead of ``||``.
 
+.. caution::
+
+    Conditional fields can not be used in combination with the ``mandatory`` attribute. While conditions are evaluated
+    on the client side in JEXL language, the ``mandatory`` attribute is evaluated on the server side via JSON Schema.
+    As it is not possible to validate JEXL in a JSON Schema it is not possible to combine these two features.
+
 Language Independent Properties
 -------------------------------
 
