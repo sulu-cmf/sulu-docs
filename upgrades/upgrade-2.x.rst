@@ -39,7 +39,7 @@ of your project in own small steps instead of one big step. This helps better to
      - 7.2 - 8.3
      - 5.4 - 7.4
 
-The upgrade process consists of the following steps:
+The upgrade process of Sulu consists of the following steps:
 
 1. Update the sulu/sulu package
 -------------------------------
