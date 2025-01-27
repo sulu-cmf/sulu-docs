@@ -15,8 +15,8 @@ of your project in own small steps instead of one big step. This helps better to
    :header-rows: 1
 
    * - Sulu Version
-     - supported Symfony Versions
      - supported PHP Versions
+     - supported Symfony Versions
    * - 2.0
      - 7.2 - 7.4
      - 4.3 - 4.4
