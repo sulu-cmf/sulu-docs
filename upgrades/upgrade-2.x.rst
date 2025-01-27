@@ -33,10 +33,10 @@ of your project in own small steps instead of one big step. This helps better to
      - 7.2 - 8.3
      - 4.4 - 5.4
    * - 2.5
-     - 7.2 - 8.3
+     - 8.0 - 8.4
      - 5.4 - 6.4
    * - 2.6
-     - 7.2 - 8.3
+     - 8.2 - 8.4
      - 5.4 - 7.4
 
 The upgrade process of Sulu consists of the following steps:
