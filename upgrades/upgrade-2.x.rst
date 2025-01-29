@@ -5,10 +5,11 @@ This upgrade guide describes how to upgrade a Sulu 2.x project to any newer vers
 these upgrades should be unproblematic, because backwards compatibility is only broken when it is really necessary to
 fix a bug.
 
-Unrelated to Sulu changes it sometimes required first upgrade PHP, Symfony or other dependencies. The following table
-should show you which versions of Sulu are compatible with which versions of PHP and Symfony, it is recommended to
-avoid big upgrades like tackling Sulu, PHP and Symfony at the same time, instead upgrade them and release it the upgrade
-of your project in own small steps instead of one big step. This helps better to identify the cause of a problem.
+Unrelated to Sulu changes, upgrades sometimes require first updating PHP, Symfony, or other dependencies. The following table
+should show you which versions of Sulu are compatible with which versions of PHP and Symfony. It is
+recommended to avoid big upgrades that tackle Sulu, PHP, and Symfony simultaneously. Instead, upgrade them and release 
+the upgrade of your project in small, separate steps rather than one big step. This approach helps to better identify
+the cause of any problems.
 
 
 .. list-table:: Sulu, Symfony, PHP Version support
