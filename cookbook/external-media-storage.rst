@@ -6,7 +6,7 @@ Google Cloud Storage).
 
 .. warning::
 
-    Please check the note about image formats / thumbnails at the end of this document.
+    Please check the note :ref:`what-about-image-formats` at the  end of this document.
 
 AWS-S3
 ------
@@ -97,9 +97,12 @@ Configure the storage with following yaml-snippet:
                 container_name: 'container-name'
                 path_prefix: 'optional path prefix'
 
-.. note::
+.. _what-about-image-formats:
 
-    **What about image formats?**
+What About Image Formats?
+-------------------------
+
+.. note::
 
     Only the original files will be uploaded to the external storage. Image Formats / Thumbnails will still be generated
     in the local directory. This is because image formats are generated in Sulu on demand, to explain in detail: when
