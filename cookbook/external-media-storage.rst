@@ -103,7 +103,7 @@ Configure the storage with following yaml-snippet:
 
     Only the original files will be uploaded to the external storage. Image Formats / Thumbnails will still be generated
     in the local directory. This is because image formats are generated in Sulu on demand, to explain in detail: when
-    when an image format is requested for the first time, Sulu generates the image from the original file and stores it in the public
+    an image format is requested for the first time, Sulu generates the image from the original file and stores it in the public
     directory. The web server then acts as a kind of proxy. If the image is requested again, it checks the public
     directory and directly returns the previously generated image instead of regenerating it. External storages like S3,
     Google Cloud Storage or Azure Blob Storage do not support some kind of proxy or CDN functionality.
