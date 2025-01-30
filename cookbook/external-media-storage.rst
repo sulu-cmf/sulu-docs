@@ -103,7 +103,7 @@ Configure the storage with following yaml-snippet:
 
     Only the original files will be uploaded to the external storage. Image Formats / Thumbnails will still be generated
     in the local directory. This is because image formats are generated in Sulu on demand, to explain in detail: when
-     when an image format is requested for the first time, Sulu generates the image from the original file and stores it in the public
+    when an image format is requested for the first time, Sulu generates the image from the original file and stores it in the public
     directory. The web server then acts as a kind of proxy. If the image is requested again, it checks the public
     directory and directly returns the previously generated image instead of regenerating it. External storages like S3,
     Google Cloud Storage or Azure Blob Storage do not support some kind of proxy or CDN functionality.
@@ -115,10 +115,13 @@ Configure the storage with following yaml-snippet:
 
     ``{{ asset(media.thumbnail['40x40']) }}``
 
-    and configure a CDN Domain in the Symfony configuration ``framework.assets`` configuration. If you have tested your proxy or CDN and it correctly
+    and `configure a CDN Domain`_ in the Symfony configuration ``framework.assets`` configuration. If you have tested your proxy or CDN and it correctly
     caches the generated images for a long time, you can disable saving the thumbnails to the local filesystem by setting
     ``sulu_media.format_cache.save_image`` to ``false`` in ``config/packages/sulu_media.yaml``, it is recommend to use an ENV variable
     to locally still use it.
 
     Important: Never disable the format cache unless you have set up a CDN or proxy. Otherwise, your server will
     regenerate the image format on every request, which can overwhelm your server, as image generation is resource-intensive.
+
+
+.. _Configure a CDN Domain: https://symfony.com/doc/6.4/reference/configuration/framework.html#base-urls
