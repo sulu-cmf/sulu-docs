@@ -102,23 +102,23 @@ Configure the storage with following yaml-snippet:
     **What about image formats?**
 
     Only the original files will be uploaded to the external storage. Image Formats / Thumbnails will still be generated
-    to the local directory. This is because image formats are generated in Sulu on request, to explain in detail: when
-    an image format is first request, Sulu generates the image out of the original file and stores it in the public
-    directory. The webserver is here so kind of a proxy, if the image is requested again it looks into the public
-    directory and can directly return the generated image instead of regenerate it. As external storages like S3,
-    Google Cloud Storage or Azure Blob Storage are not supporting some kind of proxy or CDN functionality.
+    in the local directory. This is because image formats are generated in Sulu on demand, to explain in detail: when
+     when an image format is requested for the first time, Sulu generates the image from the original file and stores it in the public
+    directory. The web server then acts as a kind of proxy. If the image is requested again, it checks the public
+    directory and directly returns the previously generated image instead of regenerating it. External storages like S3,
+    Google Cloud Storage or Azure Blob Storage do not support some kind of proxy or CDN functionality.
 
-    If you want to store the image formats in a external service you have to use a CDN like Fastly, Cloudflare or others
-    which support caching generated image formats a long time. Some hosters allow to configure CDN directly on specific URLs
-    in Sulu it would be all URLs under ``/uploads/media/*`` which needs to be behind a proxy or CDN. If your used CDN
-    requires a custom Domain you can use Symfony CDN feature via:
+    If you want to store the image formats in an external service you have to use a CDN like Fastly, Cloudflare or others
+    that support caching generated image formats for a long time. Some hosters allow to configure CDN directly on specific URLs
+    in Sulu all URLs under ``/uploads/media/*`` need to be routed through a proxy or CDN. If your chosen CDN
+    requires a custom Domain, you can use Symfony's CDN feature via:
 
     ``{{ asset(media.thumbnail['40x40']) }}``
 
-    and configure a CDN Domain in the Symfony configuration ``framework.assets`` configuration. If you have tested your proxy or CDN that it correctly
-    caches the generated images a longer time you can disable saving the thumbnails to the local filesystem by setting
-    ``sulu_media.format_cache.save_image`` to ``false`` in ``config/packages/sulu_media.yaml``, recommend a ENV variable
+    and configure a CDN Domain in the Symfony configuration ``framework.assets`` configuration. If you have tested your proxy or CDN and it correctly
+    caches the generated images for a long time, you can disable saving the thumbnails to the local filesystem by setting
+    ``sulu_media.format_cache.save_image`` to ``false`` in ``config/packages/sulu_media.yaml``, it is recommend to use an ENV variable
     to locally still use it.
 
-    Important, never ever disable the format cache if you have not setup a CDN or Proxy, else your server always will regenerate on every
-    request the image format which will mostly crash your server as image generation takes lot of resources.
+    Important: Never disable the format cache unless you have set up a CDN or proxy. Otherwise, your server will
+    regenerate the image format on every request, which can overwhelm your server, as image generation is resource-intensive.
