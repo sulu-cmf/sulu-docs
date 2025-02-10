@@ -12,7 +12,7 @@ The following requirements *must* be met to run Sulu:
 * Mac OSX, Linux or Windows
 * :doc:`Apache <../cookbook/web-server/apache>` or
   :doc:`Nginx <../cookbook/web-server/nginx>` with enabled URL rewriting
-* `PHP`_ 8.1 or higher
+* `PHP`_ 8.2 or higher
 * the `dom_extension`_ and `xml_extension`_ for PHP
 * the `gd`_, `imagick_extension`_ or `vips_extension`_ for PHP
 * a `database management system supported by Doctrine`_
