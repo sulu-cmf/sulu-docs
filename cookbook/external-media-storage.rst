@@ -1,7 +1,6 @@
 Store Media in an external Storage
 ==================================
 
-
 Sulu stores its media with the `flysystem file system abstraction`_. This allows you to configure different storage backends easily.
 
 By default this uses the local file system storage. A list of other supported storage backends and their installation instructions
@@ -27,7 +26,8 @@ The following represents the default configuration for Sulu and can be adjusted 
 
 .. warning::
 
-    Please check the note :ref:`what-about-image-formats` at in this document.
+    Please check the section :ref:`what-about-image-formats` to avoid confusion how image formats are handled in Sulu,
+    and why they can't be stored in the configured flysystem storage.
 
 .. _what-about-image-formats:
 
