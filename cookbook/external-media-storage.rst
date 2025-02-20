@@ -4,7 +4,7 @@ Store Media in an external Storage
 Sulu stores its media with the `flysystem file system abstraction`_. This allows you to configure different storage backends easily.
 
 By default this uses the local file system storage. A list of other supported storage backends and their installation instructions
-can be found in the Flysystem Documentation here: https://github.com/thephpleague/flysystem-bundle/blob/3.x/docs/2-cloud-storage-providers.md
+can be found in the Flysystem documentation here: https://github.com/thephpleague/flysystem-bundle/blob/3.x/docs/2-cloud-storage-providers.md
 
 The following represents the default configuration for Sulu and can be adjusted to your needs:
 
