@@ -1,27 +1,33 @@
 Store Media in an external Storage
 ==================================
 
+
 Sulu stores its media with the `flysystem file system abstraction`_. This allows you to configure different storage backends easily.
 
 By default this uses the local file system storage. A list of other supported storage backends and their installation instructions
-can be found here: https://github.com/thephpleague/flysystem-bundle/blob/3.x/docs/2-cloud-storage-providers.md
+can be found in the Flysystem Documentation here: https://github.com/thephpleague/flysystem-bundle/blob/3.x/docs/2-cloud-storage-providers.md
 
-If you want to set up multiple storage backends you have to configure which of those to use for Sulu media which can be done like this:
+The following represents the default configuration for Sulu and can be adjusted to your needs:
 
 .. code-block:: yaml
 
-    sulu_media:
-        storage: s3
+    # config/packages/flysystem.yaml
+    flysystem:
         storages:
-            s3:
-                key: 'your aws s3 key'
-                secret: 'your aws s3 secret'
-                bucket_name: 'your aws s3 bucket name'
-                path_prefix: 'optional path prefix'
-                region: 'eu-west-1'
+            default.storage:
+                adapter: 'local'
+                options:
+                    directory: '%kernel.project_dir%/var/storage/default'
 
-If you use s3 compatible services (e.g. minio) you can pass additional ``arguments`` and ``endpoint`` to the
-configuration.
+    # config/packages/sulu_media.yaml
+    sulu_media:
+        storage:
+            flysystem_service: 'default.storage'
+
+
+.. warning::
+
+    Please check the note :ref:`what-about-image-formats` at in this document.
 
 .. _what-about-image-formats:
 
