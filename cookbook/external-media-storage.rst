@@ -26,7 +26,7 @@ The following represents the default configuration for Sulu and can be adjusted 
 
 .. warning::
 
-    Please check the section :ref:`what-about-image-formats` to avoid confusion how image formats are handled in Sulu,
+    Please check the section :ref:`what-about-image-formats` to avoid confusion about how image formats are handled in Sulu,
     and why they can't be stored in the configured flysystem storage.
 
 .. _what-about-image-formats:
